@@ -39,6 +39,21 @@ User.init(
     },
 },
 {
-    
+    hooks: {
+        async beforeCreate(newUser) {
+            newUser.password = await bcrypt.hash(newUserData.password, 10);
+            return newUser;
+        },
+        async beforeUpdate(updateUserData) {
+            updateUserData.password = await bcrypt.hash(updateUserData.password, 10);
+            return updateUserData;
+        },
+    },
+    sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    modelName: "user",
 }
-)
+);
+
+module.exports = User;
