@@ -9,8 +9,16 @@ const commentFormHandler = async function (event) {
             method: 'POST',
             body: JSON.stringify({
                 postId,
+                body
             
-            })
-        })
+            }),
+            headers: {
+                'Content-type': 'application/json'
+            }
+        });
+        document.location.reload();
     }
-}
+};
+
+document.querySelector('#new-comment-form');
+document.addEventListener('submit', commentFormHandler)
