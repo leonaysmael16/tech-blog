@@ -1,0 +1,14 @@
+{{#if posts.length }}
+
+<section>
+    <h2>
+        Your recent Posts
+    </h2>
+    {{#each posts as |post| }}
+    {{> dashboard-portfolio post}}
+    {{/each}}
+</section>
+
+<button type="submit" class="btn"><a class="link" href="/dashboard/new"></a></button>
+
+<script src="/javascript/add-post.js"></script>
