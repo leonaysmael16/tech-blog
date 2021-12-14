@@ -7,12 +7,32 @@ Comment.init(
     {
         body: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            require: true
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        },
+        post_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'post',
+                key: 'id'
+            }
         }
-    },
-    {
-        sequelize
-    }
-);
+    }, {
+        sequelize,
+        freezeTableName: true,
+        underscored: true,
+        modelName: 'comment'
+    });
+        
+    
 
 module.exports = Comment;

@@ -1,13 +1,14 @@
 const { Comment } = require('../models');
 
 const commentData = [{
-    comment_text: "This is a tech comment",
+    body: "This is a tech comment",
     user_id: 1,
-    post_is: 1 
+    post_id: 1 
 },
 {
-    comment_text: "This is another tech comment",
-    user_id: 2
+    body: "This is another tech comment",
+    user_id: 2,
+    post_id: 2
 }];
 
 const seedComment = () => Comment.bulkCreate(commentData);
