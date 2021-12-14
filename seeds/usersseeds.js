@@ -9,6 +9,6 @@ const userData = [{
     password: "leonapass"
 }];
 
-const seedUser = () => User.bulkCreate.apply(userData);
+const seedUser = () => User.bulkCreate(userData);
 
 module.exports = seedUser;
