@@ -1,3 +1,17 @@
+:root {
+    --primary: #ccdad1;
+    --secondary: #dce9d5;
+    --tertiary: #788585;
+    --light-dark: #a1a0a1;
+    --dark: #201110;
+    --border-radius: .3rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     background-color: var(--primary);
     margin: 0;
@@ -397,7 +411,7 @@ footer {
         flex: 0 0 100%;
     }
 }
-/* col-lg */
+
 
 @media screen and (min-width: 992px) {
     .col-lg-1 {
@@ -437,7 +451,7 @@ footer {
         flex: 0 0 100%;
     }
 }
-/* col-xl */
+
 
 @media screen and (min-width: 1200px) {
     .col-xl-1 {
