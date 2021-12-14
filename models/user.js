@@ -45,7 +45,7 @@ User.init(
             return updateUserData;
         },
     },
-    sequelize: sequelize,
+    sequelize,
     timestamps: false,
     freezeTableName: true,
     modelName: "User",
