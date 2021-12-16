@@ -11,14 +11,14 @@ const PORT = process.env.PORT || 3308;
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'Super secret secret',
+    secret: "Super secret secret",
     cookie: {},
     resave: false,
-    saveUninitilized: true,
+    saveUninitialized: true,
     store: new SequelizeStore({
-        db: sequelize
+      db: sequelize
     })
-};
+  };
 
 app.use(session(sess));
 app.use(express.json());

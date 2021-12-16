@@ -1,4 +1,4 @@
-{{#if posts.length }}
+{{!-- {{#if posts.length }}
 
 <section>
     <h2>
@@ -10,3 +10,22 @@
 </section>
 
 <button type="submit" class="btn"><a class="link" href="/dashboard">Create New Post</a></button>
+
+{{/if}} --}}
+
+
+
+
+<section>
+    <h2>
+        Your Recent Posts
+    </h2>
+    {{#each posts as |post| }}
+    {{> dashboardinfo post}}
+    {{/each}}
+</section>
+
+<button type="submit" class="btn"><a class="link" href="/dashboard">Create New Post</a></button>
+
+        
+        

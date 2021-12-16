@@ -22,10 +22,13 @@
                          <a class="title" href="/">The Techie Blog</nav>
                         <a class="link" href="/">Home</a>
                         <a class="link" href="/dashboard">Dashboard</a>
-                        {{#unless loggedIn}}
+                        
                         <a class="link" href="/login">Log In</a>
                         <a class="link" href="/signup">Sign Up</a>
-                        {{/unless}}
+                        {{#if loggedIn}}
+                        <a class="link" href="/" id="logout">Log Out</a>
+                        {{/if}}
+
                     </nav>
                 </div>
                
