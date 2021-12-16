@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     Post.findAll({
             attributes: ['id',
                 'title',
-                'content',
+                'body',
                 'created_at'
             ],
             order: [
@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
                 },
                 {
                     model: Comment,
-                    attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
+                    attributes: ['id', 'body', 'post_id', 'user_id', 'created_at'],
                     include: {
                         model: User,
                         attributes: ['username']
