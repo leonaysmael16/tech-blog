@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
 router.post('/', withAuth, (req, res) => {
     if (req.session) {
         Comment.create({
-                comment_text: req.body.comment_text,
+                body: req.body.body,
                 post_id: req.body.post_id,
                 user_id: req.session.user_id,
             })
@@ -40,7 +40,7 @@ router.post('/', withAuth, (req, res) => {
 
 router.put('/:id', withAuth, (req, res) => {
     Comment.update({
-        comment_text: req.body.comment_text
+        body: req.body.body
     }, {
         where: {
             id: req.params.id

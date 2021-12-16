@@ -6,9 +6,34 @@ class Post extends Model {}
 Post.init(
   
     {
-        title: DataTypes.STRING,
-        body: DataTypes.STRING,
-        
+        id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            primaryKey: true,
+            autoIncrement: true
+        },
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        body : {
+            type: DataTypes.STRING,
+            allowNull: false,
+            unique: true
+        },
+        created_at: {
+            type: DataTypes.DATEONLY,
+            allowNull: false,
+            defaultValue: sequelize.fn('NOW')
+        },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+              model: 'user',
+              key: 'id',
+            },
+          },  
     },
     {
         sequelize,
