@@ -11,6 +11,8 @@ const userData = [{
     email: 'leona@email.com'
 }];
 
-const seedUser = () => User.bulkCreate(userData);
+const seedUser = () => User.bulkCreate(userData, {
+    individualHooks: true,
+  });
 
 module.exports = seedUser;
