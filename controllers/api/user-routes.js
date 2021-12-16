@@ -88,7 +88,7 @@ router.post('/login', (req, res) => {
                 res.status(400).json({ message: 'No user with that username!' });
                 return;
             }
-            const validPassword = dbUserData.checkPassword(req.body.password);
+            const validPassword = dbUserData.validPassword(req.body.password);
 
             if (!validPassword) {
                 res.status(400).json({ message: 'Incorrect password!' });
@@ -115,6 +115,7 @@ router.post('/logout', (req, res) => {
             res.status(204).end();
         });
     } else {
+        res.redirect('/');
         res.status(404).end();
     }
 });
