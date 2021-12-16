@@ -8,7 +8,7 @@ Post.init(
     {
         title: DataTypes.STRING,
         body: DataTypes.STRING,
-
+        
     },
     {
         sequelize,
